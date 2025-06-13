@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Kinverli Masiel Rodríguez Escarza</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0fbe5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #d4e9c4;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .left {
+      flex: 1;
+      background-color: #c4e1a7;
+      padding: 30px;
+      text-align: center;
+    }
+    .left img {
+      width: 150px;
+      height: 150px;
+      border-radius: 100px;
+      object-fit: cover;
+    }
+    .left h3 {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    .left ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+    .left ul li::before {
+      content: "💚 ";
+    }
+
+    .right {
+      flex: 2;
+      padding: 30px;
+    }
+
+    .right h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .right p {
+      margin-bottom: 15px;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    .courses ul,
+    .companions ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .courses ul li::before {
+      content: "📘 ";
+    }
+
+    .companions ul li::before {
+      content: "👩‍🎓 ";
+    }
+
+    .contact {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <img src="https://i.imgur.com/5N4OX1J.png" alt="Kinverli">
+      <h3>Aptitudes</h3>
+      <ul>
+        <li>Empática</li>
+        <li>Honesta</li>
+        <li>Proactiva</li>
+        <li>Carismática</li>
+      </ul>
+      <h3>Profesor</h3>
+      <p>Ernesto Cuadros Vargas</p>
+    </div>
+    <div class="right">
+      <h1>Kinverli Masiel Rodríguez Escarza</h1>
+      <p>Tengo 19 años y actualmente estudio la carrera de Ingeniería Industrial en la Universidad Católica San Pablo.</p>
+      <p>Me considero una persona proactiva, empática y con muchas ganas de aprender. Me apasiona encontrar soluciones prácticas a los problemas, trabajar en equipo y seguir creciendo tanto personal como profesionalmente.</p>
+      <p>Me interesa especialmente el área de gestión de procesos y mejora continua, y busco desarrollar habilidades que me permitan aportar valor en cualquier entorno laboral.</p>
+      <p>Además, disfruto participar en proyectos colaborativos y siempre busco dar lo mejor de mí en cada desafío.</p>
+      
+      <div class="section courses">
+        <h3>Cursos que estoy llevando</h3>
+        <ul>
+          <li>Cálculo I</li>
+          <li>Física II</li>
+          <li>Fundamentos de Informática</li>
+          <li>Introducción a la Filosofía</li>
+          <li>Matemática II</li>
+          <li>Amar o Defender</li>
+        </ul>
+      </div>
+
+      <div class="section companions">
+        <h3>Compañeras de clase</h3>
+        <ul>
+          <li>Cristell Zuleyka Ranilla Vilca</li>
+          <li>Joselyn Gardenia Canchumani Tito</li>
+        </ul>
+      </div>
+
+      <p class="contact">📩 Contáctame</p>
+    </div>
+  </div>
+</body>
+</html>
