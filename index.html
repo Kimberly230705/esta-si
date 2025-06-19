@@ -7,34 +7,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #8b5cf6;
+      --primary: #a78bfa;
+      --accent: #c4b5fd;
       --dark: #4c1d95;
       --light: #f3e8ff;
-      --white: #fff;
+      --white: #ffffff;
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
-
     body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(to top right, var(--light), #ede9fe);
       color: var(--dark);
       line-height: 1.6;
     }
-
     header {
-      background-color: var(--white);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      background: var(--white);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-
     nav {
       max-width: 960px;
       margin: auto;
@@ -43,24 +40,21 @@
       align-items: center;
       padding: 20px;
     }
-
     nav a {
       color: var(--dark);
       font-weight: 600;
       margin-left: 20px;
       text-decoration: none;
+      transition: color 0.3s;
     }
-
     nav a:hover {
       color: var(--primary);
     }
-
     .container {
       max-width: 960px;
       margin: auto;
       padding: 40px 20px;
     }
-
     h1 {
       font-size: 40px;
       font-weight: 700;
@@ -68,41 +62,55 @@
       text-align: center;
       margin-bottom: 10px;
     }
-
     .subtitle {
       font-size: 18px;
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       color: var(--dark);
     }
-
-    .section {
+    .frase {
+      font-style: italic;
+      text-align: center;
+      font-size: 16px;
+      color: #6b21a8;
       margin-bottom: 40px;
     }
-
+    .section {
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
     .section h2 {
       font-size: 24px;
       margin-bottom: 15px;
       color: var(--dark);
     }
-
     .card {
-      background: #f5f3ff;
+      background: var(--accent);
       padding: 20px;
       border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
-
     ul {
       list-style: disc;
       padding-left: 20px;
     }
-
     li {
       font-size: 18px;
       margin-bottom: 8px;
     }
-
+    .project {
+      background: var(--white);
+      border-left: 5px solid var(--primary);
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+    }
     .contact-button {
       display: inline-block;
       background: var(--primary);
@@ -113,36 +121,32 @@
       font-weight: bold;
       border: none;
       cursor: pointer;
-      margin-top: 20px;
+      transition: transform 0.2s ease;
+      margin-top: 10px;
     }
-
     .contact-button:hover {
+      transform: scale(1.05);
       background: #7c3aed;
     }
-
     .contact-section {
       display: none;
       margin-top: 20px;
       animation: fadeIn 0.5s ease-in-out forwards;
     }
-
     .contact-card {
       background: var(--light);
       padding: 20px;
       border-radius: 12px;
       text-align: left;
     }
-
     .contact-card a {
-      color: var(--primary);
+      color: var(--dark);
       font-weight: bold;
       text-decoration: none;
     }
-
     .contact-card a:hover {
       text-decoration: underline;
     }
-
     footer {
       text-align: center;
       padding: 20px;
@@ -150,7 +154,6 @@
       font-size: 14px;
       color: var(--dark);
     }
-
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -165,8 +168,7 @@
       <div>
         <a href="#aptitudes">Aptitudes</a>
         <a href="#cursos">Cursos</a>
-        <a href="#profesor">Profesor</a>
-        <a href="#companeras">Compañeras</a>
+        <a href="#proyectos">Proyectos</a>
         <a href="#contacto">Contacto</a>
       </div>
     </nav>
@@ -175,16 +177,7 @@
   <main class="container">
     <h1>Kinverli Masiel Rodríguez Escarza</h1>
     <p class="subtitle">Estudiante de Ingeniería Industrial | Apasionada por la mejora continua y gestión de procesos</p>
-
-    <div class="section">
-      <p>
-        Tengo 19 años y actualmente estudio la carrera de Ingeniería Industrial en la Universidad Católica San Pablo. Me considero una persona proactiva, empática y con muchas ganas de aprender. Me apasiona encontrar soluciones prácticas a los problemas, trabajar en equipo y seguir creciendo tanto personal como profesionalmente.
-      </p>
-      <br>
-      <p>
-        Me interesa especialmente el área de gestión de procesos y mejora continua, y busco desarrollar habilidades que me permitan aportar valor en cualquier entorno laboral. Además, disfruto participar en proyectos colaborativos y siempre busco dar lo mejor de mí en cada desafío.
-      </p>
-    </div>
+    <p class="frase">“La mejora continua no es una opción, es un estilo de vida.”</p>
 
     <div class="section" id="aptitudes">
       <h2>📌 Aptitudes</h2>
@@ -212,24 +205,20 @@
       </div>
     </div>
 
-    <div class="section" id="profesor">
-      <h2>👨‍🏫 Profesor</h2>
-      <div class="card">Ernesto Cuadros Vargas</div>
-    </div>
-
-    <div class="section" id="companeras">
-      <h2>👩‍🎓 Compañeras de clase</h2>
-      <div class="card">
-        <ul>
-          <li>Cristell Zuleyka Ranilla Vilca</li>
-          <li>Joselyn Gardenia Canchumani Tito</li>
-        </ul>
+    <div class="section" id="proyectos">
+      <h2>💼 Proyectos Realizados</h2>
+      <div class="project">
+        <strong>Simulación del Generador de Van de Graaff:</strong>
+        <p>Se analizó el comportamiento del generador bajo diferentes condiciones ambientales utilizando simulaciones virtuales.</p>
+      </div>
+      <div class="project">
+        <strong>Ensayo de Ética en Ingeniería:</strong>
+        <p>Reflexión crítica sobre la responsabilidad social y profesional del ingeniero en el contexto actual.</p>
       </div>
     </div>
 
     <div class="section" id="contacto" style="text-align:center;">
       <button class="contact-button" onclick="mostrarContacto()">📩 Contáctame</button>
-
       <div class="contact-section" id="datos-contacto">
         <div class="contact-card" style="margin-top: 20px;">
           <p><strong>🔗 LinkedIn:</strong>
@@ -252,7 +241,18 @@
       const contacto = document.getElementById("datos-contacto");
       contacto.style.display = (contacto.style.display === "block") ? "none" : "block";
     }
-  </script>
 
+    // Animación al hacer scroll
+    const secciones = document.querySelectorAll('.section');
+    window.addEventListener('scroll', () => {
+      const trigger = window.innerHeight * 0.9;
+      secciones.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < trigger) {
+          sec.classList.add('visible');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
