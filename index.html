@@ -1,131 +1,258 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kinverli Masiel Rodríguez Escarza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: sans-serif;
-      background-color: #f0fbe5;
+    :root {
+      --primary: #8b5cf6;
+      --dark: #4c1d95;
+      --light: #f3e8ff;
+      --white: #fff;
+    }
+
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
-    .container {
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to top right, var(--light), #ede9fe);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--white);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 960px;
+      margin: auto;
       display: flex;
-      flex-direction: row;
-      max-width: 900px;
-      margin: 40px auto;
-      background-color: #d4e9c4;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
     }
-    .left {
-      flex: 1;
-      background-color: #c4e1a7;
-      padding: 30px;
+
+    nav a {
+      color: var(--dark);
+      font-weight: 600;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--primary);
       text-align: center;
-    }
-    .left img {
-      width: 150px;
-      height: 150px;
-      border-radius: 100px;
-      object-fit: cover;
-    }
-    .left h3 {
-      margin-top: 20px;
-      font-size: 20px;
-    }
-    .left ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 10px;
-    }
-    .left ul li::before {
-      content: "💚 ";
-    }
-
-    .right {
-      flex: 2;
-      padding: 30px;
-    }
-
-    .right h1 {
-      font-size: 26px;
       margin-bottom: 10px;
     }
 
-    .right p {
-      margin-bottom: 15px;
+    .subtitle {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--dark);
     }
 
     .section {
-      margin-bottom: 25px;
+      margin-bottom: 40px;
     }
 
-    .courses ul,
-    .companions ul {
-      list-style: none;
-      padding-left: 0;
+    .section h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: var(--dark);
     }
 
-    .courses ul li::before {
-      content: "📘 ";
+    .card {
+      background: #f5f3ff;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
-    .companions ul li::before {
-      content: "👩‍🎓 ";
+    ul {
+      list-style: disc;
+      padding-left: 20px;
     }
 
-    .contact {
-      margin-top: 20px;
+    li {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .contact-button {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-size: 18px;
       font-weight: bold;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .contact-button:hover {
+      background: #7c3aed;
+    }
+
+    .contact-section {
+      display: none;
+      margin-top: 20px;
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+
+    .contact-card {
+      background: var(--light);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: left;
+    }
+
+    .contact-card a {
+      color: var(--primary);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #ede9fe;
+      font-size: 14px;
+      color: var(--dark);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="left">
-      <img src="https://i.imgur.com/5N4OX1J.png" alt="Kinverli">
-      <h3>Aptitudes</h3>
-      <ul>
-        <li>Empática</li>
-        <li>Honesta</li>
-        <li>Proactiva</li>
-        <li>Carismática</li>
-      </ul>
-      <h3>Profesor</h3>
-      <p>Ernesto Cuadros Vargas</p>
+
+  <header>
+    <nav>
+      <div><strong>Kinverli</strong></div>
+      <div>
+        <a href="#aptitudes">Aptitudes</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#profesor">Profesor</a>
+        <a href="#companeras">Compañeras</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Kinverli Masiel Rodríguez Escarza</h1>
+    <p class="subtitle">Estudiante de Ingeniería Industrial | Apasionada por la mejora continua y gestión de procesos</p>
+
+    <div class="section">
+      <p>
+        Tengo 19 años y actualmente estudio la carrera de Ingeniería Industrial en la Universidad Católica San Pablo. Me considero una persona proactiva, empática y con muchas ganas de aprender. Me apasiona encontrar soluciones prácticas a los problemas, trabajar en equipo y seguir creciendo tanto personal como profesionalmente.
+      </p>
+      <br>
+      <p>
+        Me interesa especialmente el área de gestión de procesos y mejora continua, y busco desarrollar habilidades que me permitan aportar valor en cualquier entorno laboral. Además, disfruto participar en proyectos colaborativos y siempre busco dar lo mejor de mí en cada desafío.
+      </p>
     </div>
-    <div class="right">
-      <h1>Kinverli Masiel Rodríguez Escarza</h1>
-      <p>Tengo 19 años y actualmente estudio la carrera de Ingeniería Industrial en la Universidad Católica San Pablo.</p>
-      <p>Me considero una persona proactiva, empática y con muchas ganas de aprender. Me apasiona encontrar soluciones prácticas a los problemas, trabajar en equipo y seguir creciendo tanto personal como profesionalmente.</p>
-      <p>Me interesa especialmente el área de gestión de procesos y mejora continua, y busco desarrollar habilidades que me permitan aportar valor en cualquier entorno laboral.</p>
-      <p>Además, disfruto participar en proyectos colaborativos y siempre busco dar lo mejor de mí en cada desafío.</p>
-      
-      <div class="section courses">
-        <h3>Cursos que estoy llevando</h3>
+
+    <div class="section" id="aptitudes">
+      <h2>📌 Aptitudes</h2>
+      <div class="card">
+        <ul>
+          <li>Empática</li>
+          <li>Honesta</li>
+          <li>Proactiva</li>
+          <li>Carismática</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="cursos">
+      <h2>📚 Cursos</h2>
+      <div class="card">
         <ul>
           <li>Cálculo I</li>
           <li>Física II</li>
           <li>Fundamentos de Informática</li>
-          <li>Introducción a la Filosofía</li>
+          <li>Antropología</li>
           <li>Matemática II</li>
           <li>Amar o Defender</li>
         </ul>
       </div>
+    </div>
 
-      <div class="section companions">
-        <h3>Compañeras de clase</h3>
+    <div class="section" id="profesor">
+      <h2>👨‍🏫 Profesor</h2>
+      <div class="card">Ernesto Cuadros Vargas</div>
+    </div>
+
+    <div class="section" id="companeras">
+      <h2>👩‍🎓 Compañeras de clase</h2>
+      <div class="card">
         <ul>
           <li>Cristell Zuleyka Ranilla Vilca</li>
           <li>Joselyn Gardenia Canchumani Tito</li>
         </ul>
       </div>
-
-      <p class="contact">📩 Contáctame</p>
     </div>
-  </div>
+
+    <div class="section" id="contacto" style="text-align:center;">
+      <button class="contact-button" onclick="mostrarContacto()">📩 Contáctame</button>
+
+      <div class="contact-section" id="datos-contacto">
+        <div class="contact-card" style="margin-top: 20px;">
+          <p><strong>🔗 LinkedIn:</strong>
+            <a href="https://www.linkedin.com/in/kinverli-masiel-rodriguez-escarza-a47600367/?originalSubdomain=pe" target="_blank">
+              Ir a mi perfil
+            </a>
+          </p>
+          <p><strong>✉️ Correo:</strong> kinverli.rodriguez@ucsp.edu.com</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Kinverli Masiel Rodríguez Escarza. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function mostrarContacto() {
+      const contacto = document.getElementById("datos-contacto");
+      contacto.style.display = (contacto.style.display === "block") ? "none" : "block";
+    }
+  </script>
+
 </body>
 </html>
